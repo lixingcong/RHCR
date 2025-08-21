@@ -27,7 +27,7 @@ public:
 
     bool valid_move(int loc, int dir) const {return (weights[loc][dir] < WEIGHT_MAX - 1); }
     int get_Manhattan_distance(int loc1, int loc2) const;
-    int move[4];
+    int move[4]; // 数组下标：0-右，1-上，2-左，3-下。意义：朝？？方向走一步，点位索引需要增加多少
     void copy(const BasicGraph& copy);
     int get_direction(int from, int to) const;
 

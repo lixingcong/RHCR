@@ -84,6 +84,7 @@ MAPFSolver* set_solver(const BasicGraph& G, const boost::program_options::variab
 
 	if (vm["id"].as<bool>())
 	{
+		// TODO: 中优先级 内存泄漏 2025年08月21日
 		return new ID(G, *path_planner, *mapf_solver);
 	}
 	else

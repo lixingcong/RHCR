@@ -181,6 +181,9 @@ bool KivaGrid::load_unweighted_map(std::string fname)
 		}
 		for (int dir = 0; dir < 4; dir++)
 		{
+			// 点位没有走出方格（0<=idx<=MAX_POINT）
+			// 曼哈顿距离不超过1（表示四邻域走一步）
+			// 目标不是障碍物
 			if (0 <= i + move[dir] && i + move[dir] < cols * rows && get_Manhattan_distance(i, i + move[dir]) <= 1 && types[i + move[dir]] != "Obstacle")
 				weights[i][dir] = 1;
 			else
