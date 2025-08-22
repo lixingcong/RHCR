@@ -170,7 +170,7 @@ void KivaSystem::update_goal_locations()
 				{
 					goal = goal_locations[k].back();
 				}
-				double min_timesteps = G.get_Manhattan_distance(goal.first, curr); // G.heuristics.at(goal)[curr];
+				int min_timesteps = G.get_Manhattan_distance(goal.first, curr); // G.heuristics.at(goal)[curr];
 				while (min_timesteps <= simulation_window)
 					// The agent might finish its tasks during the next planning horizon
 				{
